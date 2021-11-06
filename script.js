@@ -21,9 +21,9 @@ let numVitorias1 = 0;
 let numVitorias2 = 0;
 
 const restart = () => {
-	document
-		.querySelector(`#player${activePlayer}`)
-		.classList.remove("player--winner");
+	document.querySelector("#player1").classList.remove("player--winner");
+	document.querySelector("#player2").classList.remove("player--winner");
+
 	for (let casa in matriz) {
 		matriz[casa] = 0;
 		document.querySelector(`#x${casa}`).classList.add("hidden");
@@ -66,9 +66,11 @@ const setaSimbolo = (casa) => {
 			document.querySelector(`#btn${casa}`).classList.add("not-Allowed");
 			matriz[casa] = 2;
 		}
-		console.log(matriz);
 		if (confereVitoria()) setaVencedor();
-		else switchPlayer();
+		else {
+			if (confereVelha()) setaVelha();
+			else switchPlayer();
+		}
 	}
 };
 
@@ -99,8 +101,17 @@ const setaVencedor = () => {
 
 	for (let i = 1; i <= 9; i++)
 		document.querySelector(`#btn${i}`).classList.add("not-Allowed");
+	document.querySelector("h1").style.color = "#c7365f";
 	playing = 0;
-	return true;
+};
+
+const setaVelha = () => {
+	document.querySelector("h1").style.color = "#c7365f";
+	document.querySelector("#player1").classList.add("player--winner");
+	document.querySelector("#player2").classList.add("player--winner");
+	document.querySelector("#winner1").textContent = "Deu Velha!";
+	document.querySelector("#winner2").textContent = "Deu Velha!";
+	playing = 0;
 };
 
 const confereVitoria = () => {
@@ -116,6 +127,13 @@ const confereVitoria = () => {
 	)
 		return true;
 	else return false;
+};
+
+const confereVelha = () => {
+	for (let casa in matriz) {
+		if (matriz[casa] === 0) return false;
+	}
+	return true;
 };
 
 btn1.addEventListener("click", () => setaSimbolo(1));
@@ -137,4 +155,5 @@ btn8.addEventListener("click", () => setaSimbolo(8));
 btn9.addEventListener("click", () => setaSimbolo(9));
 
 btnRestart.addEventListener("click", restart);
+
 btnZerar.addEventListener("click", zerar);
