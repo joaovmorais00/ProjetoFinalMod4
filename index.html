@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="style.css" />
+		<title>Módulo 4</title>
+	</head>
+	<body>
+		<main>
+			<div class="titulo">
+				<h1>Jogo da Velha</h1>
+			</div>
+			<section class="player player--active" id="player1">
+				<h2 class="name" id="name--1">Player 1</h2>
+				<p class="winner" id="winner1"></p>
+				<div class="current">
+					<p class="current-label">Número de Vitórias</p>
+					<p class="current-score" id="victorys1">0</p>
+				</div>
+			</section>
+			<section class="player" id="player2">
+				<h2 class="name" id="name--2">Player 2</h2>
+				<p class="winner" id="winner2"></p>
+				<div class="current">
+					<p class="current-label">Número de Vitórias</p>
+					<p class="current-score" id="victorys2">0</p>
+				</div>
+			</section>
+
+			<div class="tabela">
+				<div class="linha">
+					<button class="btnJogo pointer" id="btn1">
+						<i id="x1" class="material-icons simbolo cor1 hidden">clear</i>
+						<i id="o1" class="material-icons simbolo cor2 hidden"
+							>radio_button_unchecked</i
+						>
+					</button>
+					<button class="btnJogo pointer" id="btn2">
+						<i id="x2" class="material-icons simbolo cor1 hidden">clear</i>
+						<i id="o2" class="material-icons simbolo cor2 hidden"
+							>radio_button_unchecked</i
+						>
+					</button>
+					<button class="btnJogo pointer" id="btn3">
+						<i id="x3" class="material-icons simbolo cor1 hidden">clear</i>
+						<i id="o3" class="material-icons simbolo cor2 hidden"
+							>radio_button_unchecked</i
+						>
+					</button>
+				</div>
+				<div class="linha">
+					<button class="btnJogo pointer" id="btn4">
+						<i id="x4" class="material-icons simbolo cor1 hidden">clear</i>
+						<i id="o4" class="material-icons simbolo cor2 hidden"
+							>radio_button_unchecked</i
+						>
+					</button>
+					<button class="btnJogo pointer" id="btn5">
+						<i id="x5" class="material-icons simbolo cor1 hidden">clear</i>
+						<i id="o5" class="material-icons simbolo cor2 hidden"
+							>radio_button_unchecked</i
+						>
+					</button>
+					<button class="btnJogo pointer" id="btn6">
+						<i id="x6" class="material-icons simbolo cor1 hidden">clear</i>
+						<i id="o6" class="material-icons simbolo cor2 hidden"
+							>radio_button_unchecked</i
+						>
+					</button>
+				</div>
+				<div class="linha">
+					<button class="btnJogo pointer" id="btn7">
+						<i id="x7" class="material-icons simbolo cor1 hidden">clear</i>
+						<i id="o7" class="material-icons simbolo cor2 hidden"
+							>radio_button_unchecked</i
+						>
+					</button>
+					<button class="btnJogo pointer" id="btn8">
+						<i id="x8" class="material-icons simbolo cor1 hidden">clear</i>
+						<i id="o8" class="material-icons simbolo cor2 hidden"
+							>radio_button_unchecked</i
+						>
+					</button>
+					<button class="btnJogo pointer" id="btn9">
+						<i id="x9" class="material-icons simbolo cor1 hidden">clear</i>
+						<i id="o9" class="material-icons simbolo cor2 hidden"
+							>radio_button_unchecked</i
+						>
+					</button>
+				</div>
+			</div>
+			<button class="btn btnRestart">Reiniciar</button>
+			<button class="btn btnZerar">Zerar</button>
+		</main>
+		<script src="script.js"></script>
+	</body>
+</html>
